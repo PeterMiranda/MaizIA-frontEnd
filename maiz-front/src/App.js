@@ -17,7 +17,8 @@ function App() {
       const res = await axios.post("http://localhost:8000/predict", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
-      setResult(res.data.resultado);
+      console.log(res)
+      setResult(res.data.final);
     } catch (err) {
       console.error(err);
       setResult("Error al procesar la imagen");
